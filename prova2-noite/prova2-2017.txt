@@ -1,0 +1,74 @@
+Unilasalle-RJ - AV2
+Aluno: Bruna Toledo Guedes
+Prova Av2 de Laboratorio de Sistemas Operacionais
+Professor: Alex Salgado
+1o. Semestre de 2017   Turno: Noite
+--------------------------------------------------
+1-Faça um script shell que receba um nome de arquivo como parametro e 
+responde se este arquivo existe ou não.
+
+#!/bin/bash
+arquivo=$1
+if [ -f $arquivo ]
+then
+   echo -e "O arquivo existe"
+else
+   echo -e "O arquivo não existe"
+fi
+
+2-Reescreva o codigo abaixo usando a estrutura for.
+#!/bin/bash
+cont=$1
+fat=1
+while [ $cont -gt 0 ] 
+do
+   fat=$(( $fat * $cont ))
+   cont=$(( $cont - 1 ))
+done
+echo $fat
+
+Resposta:
+
+#!/bin/bash
+cont = $1
+fat=1
+if [$cont -gt 0] then
+   fat=$(( $fat * $cont ))
+   cont=$(( $cont -1 ))
+done
+echo $fat
+
+
+3-Usando estrutura de repetição, faça um script para exibir todos os arquivos
+da pasta atual com tamanho = 0kb (vazio).
+Resposta: 
+
+#!/bin/bash
+n=$arquivo
+while [ $arquivo == 0 ] 
+do
+   ls
+done
+
+
+4-Usando estrutura de repetição, faça um script para ler a PASTA ATUAL, calcular e exibir:
+- O total de arquivos lidos
+- O total de arquivos com a extensão .txt 
+- O total de arquivos com a extensão .c
+- O total de arquivos com a extensão .py
+
+Resposta:
+
+#!/bin/bah
+while $arquivo in $(ls)
+do
+     ext=${arquivo##*\.}
+     case "$ext" in
+     txt) echo "$arquivo: Arquivo texto "
+        ;;
+     c) echo "$arquivo: "
+        ;;
+     py) echo "$arquivo: Arquivo python  "
+        ;;
+esac
+done
